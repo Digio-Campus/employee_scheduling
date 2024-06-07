@@ -48,7 +48,7 @@ En el script nurses_scheduling_3.py vamos a complicar un poco más la operación
 las preferencias personales de las enfermeras a la hora de asignar compañeras en los turnos. Las restricciones serán:
 
 - Tenemos un total de 6 enfermeras.
-- Calcularemos el horario de un mes(30 días).~~~~
+- Calcularemos el horario de un mes(30 días).
 - Cada enfermera tendrá 3 días de vacaciones.
 - Cada día tendrá 3 turnos: Mañana, Tarde y Noche.
 - Cada enfermera trabajará como mínimo 2 turnos cada 3 días y no podrá trabajar más de un turno por día.
@@ -56,7 +56,13 @@ las preferencias personales de las enfermeras a la hora de asignar compañeras e
 - Cada enfermera tendrá una lista de preferencias de acompañamiento donde ordenará el nombre de sus compañeras de mayor
   afinidad a menor afinidad.
 
-El objetivo será maximizar la afinidad entre las compañeras asignadas a cada turno. 
+El objetivo será maximizar la afinidad entre las compañeras asignadas a cada turno.
 
+Continuamos complicando la tarea en el script nurses_scheduling_4.py. Aquí vamos a utilizar los resultados de salida
+obtenidos en el cálculo de horarios de un mes para pasarla como información a un nuevo modelo que calculará la operación
+del siguiente mes. De esta forma haremos un bucle que calcule los horarios de un año. Quitaremos la restricción de
+afinidad y añadiremos una nueva restricción:
 
+- Cada enfermera no puede trabajar en el mismo turno el último día de un mes y el primero del mes siguiente.
 
+Por otro lado, como objetivo buscaremos maximizar la rotación en los turnos entre las enferemeras.
